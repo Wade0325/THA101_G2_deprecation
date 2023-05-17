@@ -1,7 +1,6 @@
-package web.clinic.clinicMember.entity;
+package web.clinic.businessDate.entity;
 
-import java.sql.Blob;
-import java.sql.Timestamp;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import core.pojo.Core;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,28 +20,27 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClinicMember extends Core{
+public class BusinessDate {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
+	private Integer businessSn;
+	@Column
 	private Integer clinicId;
 	@Column
-	private String clinicName;
+    private Integer vetSn;
 	@Column
-	private String clinicPrincipal;
+    private Integer weekDate;
 	@Column
-	private String clinicEmail;
+    private Integer morningBusiness;
 	@Column
-	private String clinicPassword;
+    private Integer morningAppoIntegerMax;
 	@Column
-	private String clinicPhone;
+    private Integer afternoonBusiness;
 	@Column
-	private Timestamp clinicMemberDate;
+    private Integer afternoonAppoIntegerMax;
 	@Column
-	private String clinicAddress;
+    private Integer nightBusiness;
 	@Column
-	private Blob clinicPhoto;
-	@Column
-	private String clinicService;
-	
+    private Integer nightAppoIntegerMax;
 }

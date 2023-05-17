@@ -1,7 +1,6 @@
-package web.clinic.clinicMember.entity;
+package web.clinic.vet.entity;
 
-import java.sql.Blob;
-import java.sql.Timestamp;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import core.pojo.Core;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,28 +20,19 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClinicMember extends Core{
+public class Vet {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
+	private Integer vetSn;
+	@Column
 	private Integer clinicId;
 	@Column
-	private String clinicName;
+	private String vetName;
 	@Column
-	private String clinicPrincipal;
+	private Integer vetGender;
 	@Column
-	private String clinicEmail;
+	private String specialty;
 	@Column
-	private String clinicPassword;
-	@Column
-	private String clinicPhone;
-	@Column
-	private Timestamp clinicMemberDate;
-	@Column
-	private String clinicAddress;
-	@Column
-	private Blob clinicPhoto;
-	@Column
-	private String clinicService;
-	
+	private Integer seniority;
 }
