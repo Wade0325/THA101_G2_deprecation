@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import core.pojo.Core;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +21,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClinicMember extends Core{
+public class ClinicMember {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
@@ -38,12 +37,14 @@ public class ClinicMember extends Core{
 	@Column
 	private String clinicPhone;
 	@Column
-	private Timestamp clinicMemberDate;
+	private Timestamp clinicMemberCreateDate;
 	@Column
 	private String clinicAddress;
 	@Column
 	private Blob clinicPhoto;
 	@Column
 	private String clinicService;
+	@Column
+	private Timestamp clinicMemberLastUpdateDate;
 	
 }
